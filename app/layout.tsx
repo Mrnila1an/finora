@@ -3,6 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://finora-yykm-five.vercel.app"),
+  verification: {
+    google: "SfyY0x92z7r5ebes04165l1vDB61njpwfObqIdjq0JQ",
+  },
   title: {
     default: "Finora — Personal finance, made simple",
     template: "%s | Finora",
