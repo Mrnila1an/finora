@@ -1,65 +1,13 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ChartNoAxesCombined, PiggyBank, ShieldCheck, WalletCards } from "lucide-react";
+
+const features = [
+  { icon: WalletCards, title: "See every rupee", text: "Keep income, expenses and payment methods in one calm place." },
+  { icon: ChartNoAxesCombined, title: "Spend with clarity", text: "Spot your biggest categories and build better money habits." },
+  { icon: PiggyBank, title: "Make goals real", text: "Turn a wish into a visible saving plan you can follow." },
+];
+
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <div className="mx-auto flex min-h-screen max-w-7xl items-center px-6 py-16">
-        <div className="max-w-3xl">
-          <span className="inline-flex rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300">
-            Personal Finance, Simplified
-          </span>
-
-          <h1 className="mt-6 text-5xl font-bold tracking-tight sm:text-7xl">
-            Take control of your money.
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
-            Finora helps you track income, expenses, budgets, savings goals,
-            and recurring payments in one simple dashboard.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="/login"
-              className="rounded-xl bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-slate-200"
-            >
-              Get Started
-            </a>
-
-            <a
-              href="#features"
-              className="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-white transition hover:bg-slate-900"
-            >
-              Explore Features
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <section id="features" className="border-t border-slate-800">
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-20 md:grid-cols-3">
-          {[
-            {
-              title: "Track spending",
-              text: "Record income and expenses and understand where your money goes.",
-            },
-            {
-              title: "Set budgets",
-              text: "Create monthly budgets and keep an eye on your spending.",
-            },
-            {
-              title: "Reach your goals",
-              text: "Track savings targets and see your progress over time.",
-            },
-          ].map((feature) => (
-            <div
-              key={feature.title}
-              className="rounded-2xl border border-slate-800 bg-slate-900 p-6"
-            >
-              <h2 className="text-xl font-semibold">{feature.title}</h2>
-              <p className="mt-3 leading-7 text-slate-400">{feature.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </main>
-  );
+  return <main className="min-h-screen overflow-hidden bg-[#080b1e] text-white"><div className="hero-grid relative"><nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6"><Link href="/" className="text-xl font-black tracking-tight">fin<span className="text-violet-400">ora</span></Link><div className="flex items-center gap-3 text-sm font-semibold"><Link href="/login" className="rounded-full border border-white/15 px-4 py-2.5 text-slate-200 transition hover:bg-white/10">Sign in</Link><Link href="/signup" className="rounded-full bg-white px-5 py-2.5 text-slate-950 transition hover:bg-violet-100">Get started</Link></div></nav><section className="mx-auto grid max-w-6xl items-center gap-10 px-6 pb-20 pt-12 lg:grid-cols-[1.08fr_.92fr] lg:pb-28 lg:pt-20"><div><div className="inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-400/10 px-3 py-1.5 text-sm text-violet-200"><span className="h-2 w-2 rounded-full bg-emerald-400" />Your money, made simple</div><h1 className="mt-6 max-w-3xl text-5xl font-black leading-[.98] tracking-tight sm:text-7xl">Feel good about <span className="text-violet-400">every decision.</span></h1><p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">A warmer, clearer way to track your spending, build useful budgets, and watch your savings grow.</p><div className="mt-9 flex flex-wrap gap-3"><Link href="/signup" className="inline-flex items-center gap-2 rounded-full bg-violet-500 px-6 py-3.5 font-bold shadow-lg shadow-violet-600/30 transition hover:bg-violet-400">Start for free <ArrowRight size={18} /></Link><a href="#features" className="rounded-full border border-white/15 px-6 py-3.5 font-bold text-slate-200 hover:bg-white/5">Explore features</a></div><div className="mt-9 flex items-center gap-3 text-sm text-slate-400"><ShieldCheck className="text-emerald-400" size={19} />Private by design. Your money stays yours.</div></div><div className="relative mx-auto w-full max-w-md"><div className="absolute -inset-10 rounded-full bg-violet-600/20 blur-3xl" /><div className="relative rounded-[2.5rem] border border-white/10 bg-white/[.06] p-5 shadow-2xl backdrop-blur"><Image src="/images/finora-hero.png" alt="Wallet, coins and a growing savings plant" width={700} height={700} priority className="mx-auto h-auto w-full" /></div><div className="absolute -bottom-4 -left-5 rounded-2xl border border-white/10 bg-[#151a3d]/90 px-4 py-3 shadow-xl backdrop-blur"><p className="text-xs text-slate-400">Savings this month</p><p className="mt-1 font-bold text-emerald-400">+ 24% <span className="text-xs font-medium text-slate-400">on track</span></p></div></div></section></div><section id="features" className="mx-auto max-w-6xl px-6 py-20"><p className="text-center text-sm font-bold uppercase tracking-[.2em] text-violet-300">Everything in one flow</p><h2 className="mx-auto mt-3 max-w-xl text-center text-3xl font-black sm:text-4xl">Money tools that feel human.</h2><div className="mt-11 grid gap-5 md:grid-cols-3">{features.map(({icon: Icon,title,text}) => <article key={title} className="rounded-3xl border border-white/10 bg-white/[.035] p-7 transition hover:-translate-y-1 hover:bg-white/[.07]"><div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-violet-500/15 text-violet-300"><Icon size={22}/></div><h3 className="mt-5 text-xl font-bold">{title}</h3><p className="mt-3 leading-7 text-slate-400">{text}</p></article>)}</div></section></main>;
 }
