@@ -2,8 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Finora — Personal finance, made simple",
-  description: "Track spending, build budgets, and reach savings goals.",
+  metadataBase: new URL("https://finora-yykm-five.vercel.app"),
+  title: {
+    default: "Finora — Personal finance, made simple",
+    template: "%s | Finora",
+  },
+  description: "Finora helps you track spending, build budgets, and reach savings goals.",
+  keywords: ["Finora", "personal finance", "budget tracker", "expense tracker", "savings goals"],
+  openGraph: {
+    title: "Finora — Personal finance, made simple",
+    description: "Track spending, build budgets, and reach savings goals.",
+    url: "https://finora-yykm-five.vercel.app",
+    siteName: "Finora",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
